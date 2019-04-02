@@ -48,8 +48,8 @@ public class CallbackServer extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String accessId = "LTAIsTb1pEqOAbdw"; // 请填写您的AccessKeyId。
-        String accessKey = "FFALv4eN3gLr0PvmsrriWhAGfLE1Ua"; // 请填写您的AccessKeySecret。
+        String accessId = "LTAIDnVOqcBgxtP8"; // 请填写您的AccessKeyId。
+        String accessKey = "uNanRgh0t9N5zjWhUvHjTyJKlps7le"; // 请填写您的AccessKeySecret。
         String endpoint = ENDPOINT; // 请填写您的 endpoint。
         String bucket = BUCKET; // 请填写您的 bucketname 。
         String host = "http://" + bucket + "." + endpoint; // host的格式为 bucketname.endpoint
