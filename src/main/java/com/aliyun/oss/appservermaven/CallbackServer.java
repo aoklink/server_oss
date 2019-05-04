@@ -54,7 +54,7 @@ public class CallbackServer extends HttpServlet {
         String bucket = BUCKET; // 请填写您的 bucketname 。
         String host = "http://" + bucket + "." + endpoint; // host的格式为 bucketname.endpoint
         // callbackUrl为 上传回调服务器的URL，请将下面的IP和Port配置为您自己的真实信息。
-        String callbackUrl = "http://47.111.161.136:3990";
+        String callbackUrl = "http://oss.linkfeeling.cn/access_callback";//"http://47.111.161.136:3990";
         String dir = "link-platform/"; // 用户上传文件时指定的前缀。
 
         OSSClient client = new OSSClient(endpoint, accessId, accessKey);
