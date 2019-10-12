@@ -48,8 +48,8 @@ public class CallbackServer extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String accessId = "LTAIxCsisHAF0axG"; // 请填写您的AccessKeyId。
-        String accessKey = "wRmZNmFVPAnhRkP8MunpFsuOPIQcnZ"; // 请填写您的AccessKeySecret。
+        String accessId = "LTAIDnVOqcBgxtP8"; // 请填写您的AccessKeyId。
+        String accessKey = "uNanRgh0t9N5zjWhUvHjTyJKlps7le"; // 请填写您的AccessKeySecret。
         String endpoint = ENDPOINT; // 请填写您的 endpoint。
         String bucket = BUCKET; // 请填写您的 bucketname 。
         String host = "http://" + bucket + "." + endpoint; // host的格式为 bucketname.endpoint
@@ -90,8 +90,9 @@ public class CallbackServer extends HttpServlet {
 
             JSONObject ja1 = JSONObject.fromObject(respMap);
             // System.out.println(ja1.toString());
-            response.setHeader("Access-Control-Allow-Origin", "*");
-            response.setHeader("Access-Control-Allow-Methods", "GET, POST");
+            //response.setHeader("Access-Control-Allow-Origin", "*");
+           // response.setHeader("Access-Control-Allow-Methods", "GET, POST");
+            response.setHeader("Access-Control-Allow-Credentials","true");
             response(request, response, ja1.toString());
 
         } catch (Exception e) {
