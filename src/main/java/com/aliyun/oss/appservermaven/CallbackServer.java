@@ -10,8 +10,7 @@ import java.security.KeyFactory;
 import java.security.PublicKey;
 import java.security.spec.X509EncodedKeySpec;
 import java.sql.Date;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -90,8 +89,14 @@ public class CallbackServer extends HttpServlet {
 
             JSONObject ja1 = JSONObject.fromObject(respMap);
             // System.out.println(ja1.toString());
-            //response.setHeader("Access-Control-Allow-Origin", "*");
-           // response.setHeader("Access-Control-Allow-Methods", "GET, POST");
+            String []  allowDomain= {"http://test.linkfeeling.cn","http://localhost:8080"};
+            Set<String> allowedOrigins= new HashSet<String>(Arrays.asList(allowDomain));
+            String originHeader = request.getHeader("Origin");
+            if (allowedOrigins.contains(originHeader)) {
+                response.setHeader("Access-Control-Allow-Origin", originHeader);
+                response.setHeader("Access-Control-Allow-Methods", "GET, POST");
+            }
+
             response.setHeader("Access-Control-Allow-Credentials","true");
             response(request, response, ja1.toString());
 
