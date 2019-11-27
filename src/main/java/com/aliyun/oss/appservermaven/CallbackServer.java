@@ -89,7 +89,7 @@ public class CallbackServer extends HttpServlet {
 
             JSONObject ja1 = JSONObject.fromObject(respMap);
             // System.out.println(ja1.toString());
-            String []  allowDomain= {"http://test.linkfeeling.cn","http://localhost:8080"};
+            String []  allowDomain= {};//{"http://test.linkfeeling.cn","http://localhost:8080"};
             Set<String> allowedOrigins= new HashSet<String>(Arrays.asList(allowDomain));
             String originHeader = request.getHeader("Origin");
             if (allowedOrigins.contains(originHeader)) {
